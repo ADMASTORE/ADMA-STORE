@@ -193,6 +193,71 @@ footer { border-top:1px solid #260707; padding:24px 0; color:#777; font-size:12p
   background:#100000; border-radius:6px; color:#eee; font-size:13px; font-weight:800;
 }
 
+
+/* Layout especial de productos: 1-4 / 5 centrado / 6-9 / 10 centrado */
+.products {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.product-card:nth-child(5),
+.product-card:nth-child(10) {
+  grid-column: 2 / span 2;
+  width: 78%;
+  justify-self: center;
+}
+
+.product-card:nth-child(5) {
+  transform: scale(1.045);
+  transform-origin: center;
+}
+
+.product-card:nth-child(10) {
+  transform: scale(1.10);
+  transform-origin: center;
+}
+
+@media(max-width:950px) {
+  .products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .product-card:nth-child(5),
+  .product-card:nth-child(10) {
+    grid-column: 1 / -1;
+    width: 72%;
+    justify-self: center;
+  }
+
+  .product-card:nth-child(5) {
+    transform: scale(1.035);
+  }
+
+  .product-card:nth-child(10) {
+    transform: scale(1.08);
+  }
+}
+
+@media(max-width:650px) {
+  .products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .product-card:nth-child(5),
+  .product-card:nth-child(10) {
+    grid-column: 1 / -1;
+    width: 76%;
+    justify-self: center;
+  }
+
+  .product-card:nth-child(5) {
+    transform: scale(1.04);
+  }
+
+  .product-card:nth-child(10) {
+    transform: scale(1.10);
+  }
+}
+
 </style>
 </head>
 <body>
@@ -232,77 +297,7 @@ footer { border-top:1px solid #260707; padding:24px 0; color:#777; font-size:12p
     <article class="product-card">
         <div class="discount-badge">50% OFF</div>
         <div class="product-image-wrap">
-          <img src="sl-pro.webp" alt="SL PRO">
-        </div>
-        <div class="card-info">
-          <h3>SL PRO</h3>
-          <div class="old-price">De R$30,00</div>
-          <div class="price">R$15,00</div>
-          <div class="savings">Você economiza R$15,00</div>
-          <p>SL REGEDIT</p>
-          <a class="buy-btn" href="https://wa.me/5548988021810?text=Tenho%20interesse%20no%20painel%20SL%20PRO%20de%20R%2415%2C00" target="_blank" rel="noopener">☘ COMPRAR</a>
-        </div>
-      </article>
-    <article class="product-card">
-        <div class="discount-badge">50% OFF</div>
-        <div class="product-image-wrap">
-          <img src="sl-pro-max.webp" alt="SL PRO MAX">
-        </div>
-        <div class="card-info">
-          <h3>SL PRO MAX</h3>
-          <div class="old-price">De R$50,00</div>
-          <div class="price">R$25,00</div>
-          <div class="savings">Você economiza R$25,00</div>
-          <p>SL REGEDIT</p>
-          <a class="buy-btn" href="https://wa.me/5548988021810?text=Tenho%20interesse%20no%20painel%20SL%20PRO%20MAX%20de%20R%2425%2C00" target="_blank" rel="noopener">☘ COMPRAR</a>
-        </div>
-      </article>
-    <article class="product-card">
-        <div class="discount-badge">50% OFF</div>
-        <div class="product-image-wrap">
-          <img src="sl-max.webp" alt="SL MAX">
-        </div>
-        <div class="card-info">
-          <h3>SL MAX</h3>
-          <div class="old-price">De R$80,00</div>
-          <div class="price">R$40,00</div>
-          <div class="savings">Você economiza R$40,00</div>
-          <p>SL REGEDIT</p>
-          <a class="buy-btn" href="https://wa.me/5548988021810?text=Tenho%20interesse%20no%20painel%20SL%20MAX%20de%20R%2440%2C00" target="_blank" rel="noopener">☘ COMPRAR</a>
-        </div>
-      </article>
-    <article class="product-card">
-        <div class="discount-badge">50% OFF</div>
-        <div class="product-image-wrap">
-          <img src="sl-final.webp" alt="SL FINAL">
-        </div>
-        <div class="card-info">
-          <h3>SL FINAL</h3>
-          <div class="old-price">De R$100,00</div>
-          <div class="price">R$50,00</div>
-          <div class="savings">Você economiza R$50,00</div>
-          <p>SL REGEDIT</p>
-          <a class="buy-btn" href="https://wa.me/5548988021810?text=Tenho%20interesse%20no%20painel%20SL%20FINAL%20de%20R%2450%2C00" target="_blank" rel="noopener">☘ COMPRAR</a>
-        </div>
-      </article>
-    <article class="product-card">
-        <div class="discount-badge">50% OFF</div>
-        <div class="product-image-wrap">
-          <img src="sl-extreme.webp" alt="SL EXTREME">
-        </div>
-        <div class="card-info">
-          <h3>SL EXTREME</h3>
-          <div class="old-price">De R$130,00</div>
-          <div class="price">R$65,00</div>
-          <div class="savings">Você economiza R$65,00</div>
-          <p>SL REGEDIT</p>
-          <a class="buy-btn" href="https://wa.me/5548988021810?text=Tenho%20interesse%20no%20painel%20SL%20EXTREME%20de%20R%2465%2C00" target="_blank" rel="noopener">☘ COMPRAR</a>
-        </div>
-      </article>
-    <article class="product-card">
-        <div class="discount-badge">50% OFF</div>
-        <div class="product-image-wrap">
-          <img src="sl-extreme.3.webp" alt="SL EXTREME 2">
+          <img src="assets/sl-extreme.3.webp" alt="SL EXTREME 2">
         </div>
         <div class="card-info">
           <h3>SL EXTREME 2</h3>
@@ -310,13 +305,14 @@ footer { border-top:1px solid #260707; padding:24px 0; color:#777; font-size:12p
           <div class="price">R$75,00</div>
           <div class="savings">Você economiza R$75,00</div>
           <p>SL REGEDIT</p>
-          <a class="buy-btn" href="https://wa.me/5548988021810?text=Tenho%20interesse%20no%20painel%20SL%20EXTREME%202%20de%20R%2475%2C00" target="_blank" rel="noopener">☘ COMPRAR</a>
+          <a class="buy-btn" href="https://wa.me/5548988021810?text=Tenho%20interesse%20no%20painel%20SL%20EXTREME%20de%20R%2475%2C00" target="_blank" rel="noopener">☘ COMPRAR</a>
         </div>
       </article>
+    
     <article class="product-card">
         <div class="discount-badge">50% OFF</div>
         <div class="product-image-wrap">
-          <img src="sl-sheron.2.webp" alt="SL SHERON">
+          <img src="assets/sl-sheron.2.webp" alt="SL SHERON">
         </div>
         <div class="card-info">
           <h3>SL SHERON</h3>
@@ -327,10 +323,11 @@ footer { border-top:1px solid #260707; padding:24px 0; color:#777; font-size:12p
           <a class="buy-btn" href="https://wa.me/5548988021810?text=Tenho%20interesse%20no%20painel%20SL%20SHERON%20de%20R%2490%2C00" target="_blank" rel="noopener">☘ COMPRAR</a>
         </div>
       </article>
+    
     <article class="product-card">
         <div class="discount-badge">50% OFF</div>
         <div class="product-image-wrap">
-          <img src="sl-flowes.2.webp" alt="SL FLOWES">
+          <img src="assets/sl-flowes.2.webp" alt="SL FLOWES">
         </div>
         <div class="card-info">
           <h3>SL FLOWES</h3>
@@ -341,10 +338,11 @@ footer { border-top:1px solid #260707; padding:24px 0; color:#777; font-size:12p
           <a class="buy-btn" href="https://wa.me/5548988021810?text=Tenho%20interesse%20no%20painel%20SL%20FLOWES%20de%20R%24100%2C00" target="_blank" rel="noopener">☘ COMPRAR</a>
         </div>
       </article>
+    
     <article class="product-card">
         <div class="discount-badge">50% OFF</div>
         <div class="product-image-wrap">
-          <img src="sl-trovao.2.webp" alt="SL TROWÃO">
+          <img src="assets/sl-trovao.2.webp" alt="SL TROWÃO">
         </div>
         <div class="card-info">
           <h3>SL TROWÃO</h3>
@@ -355,10 +353,11 @@ footer { border-top:1px solid #260707; padding:24px 0; color:#777; font-size:12p
           <a class="buy-btn" href="https://wa.me/5548988021810?text=Tenho%20interesse%20no%20painel%20SL%20TROW%C3%83O%20de%20R%24110%2C00" target="_blank" rel="noopener">☘ COMPRAR</a>
         </div>
       </article>
+    
     <article class="product-card">
         <div class="discount-badge">50% OFF</div>
         <div class="product-image-wrap">
-          <img src="sl-full-final.2.webp" alt="SL FULL FINAL">
+          <img src="assets/sl-full-final.2.webp" alt="SL FULL FINAL">
         </div>
         <div class="card-info">
           <h3>SL FULL FINAL</h3>
@@ -369,6 +368,7 @@ footer { border-top:1px solid #260707; padding:24px 0; color:#777; font-size:12p
           <a class="buy-btn" href="https://wa.me/5548988021810?text=Tenho%20interesse%20no%20painel%20SL%20FULL%20FINAL%20de%20R%24120%2C00" target="_blank" rel="noopener">☘ COMPRAR</a>
         </div>
       </article>
+    
   </div>
 </section>
 
@@ -383,12 +383,7 @@ footer { border-top:1px solid #260707; padding:24px 0; color:#777; font-size:12p
     <table class="compare">
       <thead><tr><th>PAINEL</th><th>PREÇO</th><th>DESCONTO</th><th>ECONOMIA</th><th></th></tr></thead>
       <tbody>
-        <tr><td>SL PRO</td><td>R$15,00</td><td>50% OFF</td><td>R$15,00</td><td><a class="compare-buy" href="https://wa.me/5548988021810?text=Tenho%20interesse%20no%20painel%20SL%20PRO%20de%20R%2415%2C00" target="_blank" rel="noopener">COMPRAR</a></td></tr>
-        <tr><td>SL PRO MAX</td><td>R$25,00</td><td>50% OFF</td><td>R$25,00</td><td><a class="compare-buy" href="https://wa.me/5548988021810?text=Tenho%20interesse%20no%20painel%20SL%20PRO%20MAX%20de%20R%2425%2C00" target="_blank" rel="noopener">COMPRAR</a></td></tr>
-        <tr><td>SL MAX</td><td>R$40,00</td><td>50% OFF</td><td>R$40,00</td><td><a class="compare-buy" href="https://wa.me/5548988021810?text=Tenho%20interesse%20no%20painel%20SL%20MAX%20de%20R%2440%2C00" target="_blank" rel="noopener">COMPRAR</a></td></tr>
-        <tr><td>SL FINAL</td><td>R$50,00</td><td>50% OFF</td><td>R$50,00</td><td><a class="compare-buy" href="https://wa.me/5548988021810?text=Tenho%20interesse%20no%20painel%20SL%20FINAL%20de%20R%2450%2C00" target="_blank" rel="noopener">COMPRAR</a></td></tr>
-        <tr><td>SL EXTREME</td><td>R$65,00</td><td>50% OFF</td><td>R$65,00</td><td><a class="compare-buy" href="https://wa.me/5548988021810?text=Tenho%20interesse%20no%20painel%20SL%20EXTREME%20de%20R%2465%2C00" target="_blank" rel="noopener">COMPRAR</a></td></tr>
-        <tr><td>SL EXTREME 2</td><td>R$75,00</td><td>50% OFF</td><td>R$75,00</td><td><a class="compare-buy" href="https://wa.me/5548988021810?text=Tenho%20interesse%20no%20painel%20SL%20EXTREME%202%20de%20R%2475%2C00" target="_blank" rel="noopener">COMPRAR</a></td></tr>
+        <tr><td>SL EXTREME</td><td>R$75,00</td><td>50% OFF</td><td>R$75,00</td><td><a class="compare-buy" href="https://wa.me/5548988021810?text=Tenho%20interesse%20no%20painel%20SL%20EXTREME%20de%20R%2475%2C00" target="_blank" rel="noopener">COMPRAR</a></td></tr>
         <tr><td>SL SHERON</td><td>R$90,00</td><td>50% OFF</td><td>R$90,00</td><td><a class="compare-buy" href="https://wa.me/5548988021810?text=Tenho%20interesse%20no%20painel%20SL%20SHERON%20de%20R%2490%2C00" target="_blank" rel="noopener">COMPRAR</a></td></tr>
         <tr><td>SL FLOWES</td><td>R$100,00</td><td>50% OFF</td><td>R$100,00</td><td><a class="compare-buy" href="https://wa.me/5548988021810?text=Tenho%20interesse%20no%20painel%20SL%20FLOWES%20de%20R%24100%2C00" target="_blank" rel="noopener">COMPRAR</a></td></tr>
         <tr><td>SL TROWÃO</td><td>R$110,00</td><td>50% OFF</td><td>R$110,00</td><td><a class="compare-buy" href="https://wa.me/5548988021810?text=Tenho%20interesse%20no%20painel%20SL%20TROW%C3%83O%20de%20R%24110%2C00" target="_blank" rel="noopener">COMPRAR</a></td></tr>
