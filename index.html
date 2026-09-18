@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ADMA STORE — Paneles para Free Fire</title>
+<meta name="description" content="ADMA STORE — Paneles para Free Fire. Compra y recibe atención por WhatsApp.">
+<style>
+:root {
+  --red:#ff1717;
+  --red2:#ff3b3b;
+  --bg:#050505;
+  --panel:#0d0d0d;
+  --line:#3b1010;
+  --text:#f5f5f5;
+  --muted:#aaa;
+}
+* { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; }
+body {
+  background: radial-gradient(circle at 70% 10%, #240000 0, transparent 28%), var(--bg);
+  color:var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x:hidden;
+}
+body:before {
+  content:""; position:fixed; inset:0; pointer-events:none; opacity:.16;
+  background-image:linear-gradient(rgba(255,0,0,.08) 1px, transparent 1px),
+                   linear-gradient(90deg, rgba(255,0,0,.08) 1px, transparent 1px);
+  background-size:45px 45px;
+}
+a { color:inherit; text-decoration:none; }
+.container { width:min(1180px,92%); margin:auto; }
+header {
+  position:sticky; top:0; z-index:20;
+  background:rgba(0,0,0,.86); backdrop-filter:blur(12px);
+  border-bottom:1px solid #260707;
+}
+.nav {
+  min-height:78px; display:flex; align-items:center; justify-content:space-between; gap:20px;
+}
+.logo { width:150px; height:auto; object-fit:contain; }
+nav { display:flex; align-items:center; gap:28px; font-size:13px; font-weight:800; }
+nav a { color:#ddd; }
+nav a:hover { color:var(--red); }
+.nav-buy,.buy-btn {
+  display:inline-flex; justify-content:center; align-items:center; gap:8px;
+  border:1px solid var(--red); color:#fff; background:#100000;
+  padding:12px 20px; border-radius:6px; font-weight:900;
+  box-shadow:0 0 12px rgba(255,0,0,.55), inset 0 0 8px rgba(255,0,0,.12);
+  transition:.2s;
+}
+.nav-buy:hover,.buy-btn:hover { transform:translateY(-2px); box-shadow:0 0 22px rgba(255,0,0,.75); background:#230000; }
+.hero {
+  min-height:590px; display:grid; grid-template-columns:1fr 1fr; align-items:center; gap:10px;
+  position:relative; padding:45px 0 35px;
+}
+.hero-copy { padding:25px 0; }
+.eyebrow { color:var(--red); font-weight:900; letter-spacing:.8px; margin-bottom:14px; }
+h1 { font-size:clamp(52px,7vw,92px); line-height:.88; text-transform:uppercase; font-weight:1000; font-style:italic; letter-spacing:-3px; }
+h1 span { color:var(--red); display:block; }
+.lead { margin-top:22px; color:#ddd; font-size:17px; line-height:1.55; max-width:560px; }
+.hero-features { display:grid; grid-template-columns:repeat(3,1fr); margin-top:35px; }
+.feature { padding:0 18px; border-right:1px solid #551313; }
+.feature:first-child { padding-left:0; }
+.feature:last-child { border:0; }
+.feature b { display:block; color:var(--red); font-size:27px; margin-bottom:7px; }
+.feature strong { font-size:12px; display:block; }
+.feature small { color:#aaa; line-height:1.35; }
+.hero-art {
+  width:100%; max-width:570px; justify-self:end;
+  filter:drop-shadow(0 0 28px rgba(255,0,0,.25));
+}
+.section { padding:55px 0; }
+.section-title { text-align:center; margin-bottom:35px; }
+.kicker { color:var(--red); text-transform:uppercase; font-size:12px; font-weight:900; letter-spacing:2px; }
+h2 { font-size:clamp(28px,4vw,48px); text-transform:uppercase; margin:8px 0; }
+.section-title p { color:#aaa; }
+.products {
+  display:grid; grid-template-columns:repeat(5,1fr); gap:15px;
+}
+.product-card {
+  background:linear-gradient(180deg,#0e0e0e,#070707);
+  border:1px solid #481010; border-radius:8px; overflow:hidden;
+  box-shadow:0 0 0 1px rgba(255,0,0,.03);
+}
+.product-card:hover { transform:translateY(-5px); border-color:var(--red); box-shadow:0 10px 35px rgba(255,0,0,.18); }
+.product-image-wrap { background:#000; }
+.product-image-wrap img { display:block; width:100%; height:auto; }
+.card-info { text-align:center; padding:14px; }
+.card-info h3 { font-size:17px; }
+.price { color:var(--red); font-size:27px; font-weight:1000; margin:6px 0; }
+.card-info p { color:#aaa; font-size:11px; font-weight:800; margin-bottom:12px; }
+.buy-btn { width:100%; padding:11px 10px; font-size:13px; }
+.steps {
+  display:grid; grid-template-columns:repeat(4,1fr); gap:0;
+  border:1px solid #421010; background:#080808; border-radius:7px;
+}
+.step { padding:28px 20px; text-align:center; border-right:1px solid #321010; }
+.step:last-child { border:0; }
+.num { width:42px; height:42px; border:1px solid var(--red); color:var(--red); border-radius:50%; display:grid; place-items:center; margin:0 auto 13px; font-weight:900; }
+.step h3 { font-size:15px; margin-bottom:8px; }
+.step p { color:#999; font-size:13px; line-height:1.45; }
+.trust { display:grid; grid-template-columns:repeat(4,1fr); gap:18px; }
+.trust-box { background:#0b0b0b; border:1px solid #3c1111; padding:28px 18px; text-align:center; border-radius:6px; }
+.trust-icon { color:var(--red); font-size:34px; margin-bottom:10px; }
+.trust-box h3 { font-size:15px; margin-bottom:7px; }
+.trust-box p { color:#999; font-size:13px; line-height:1.45; }
+.faq {
+  display:grid; grid-template-columns:1fr 1fr; gap:18px;
+  border:1px solid #3c1111; padding:20px; border-radius:6px; background:#080808;
+}
+details { border-bottom:1px solid #2b0c0c; padding:16px 0; }
+details:last-child { border:0; }
+summary { cursor:pointer; font-weight:800; }
+details p { color:#aaa; padding-top:10px; line-height:1.5; font-size:14px; }
+.cta {
+  background:linear-gradient(100deg,#130000,#080808 45%,#1a0000);
+  border:1px solid #651212; padding:42px; display:flex; justify-content:space-between; align-items:center; gap:25px;
+  border-radius:7px; overflow:hidden; position:relative;
+}
+.cta:after { content:""; position:absolute; inset:auto -10% -70% 40%; height:200px; background:rgba(255,0,0,.2); filter:blur(70px); }
+.cta h2 { position:relative; z-index:1; }
+.cta p { color:#aaa; position:relative; z-index:1; }
+.cta .buy-btn { width:auto; min-width:180px; position:relative; z-index:1; }
+footer { border-top:1px solid #260707; padding:24px 0; color:#777; font-size:12px; }
+.footer-inner { display:flex; justify-content:space-between; gap:15px; }
+.mobile-menu { display:none; }
+@media(max-width:950px) {
+  nav { gap:15px; }
+  .products { grid-template-columns:repeat(2,1fr); }
+  .product-card:last-child { grid-column:span 2; max-width:55%; justify-self:center; }
+  .hero { grid-template-columns:1fr; }
+  .hero-art { justify-self:center; max-width:650px; }
+}
+@media(max-width:650px) {
+  header { position:relative; }
+  .nav { min-height:68px; }
+  .logo { width:120px; }
+  nav { display:none; }
+  .nav-buy { padding:9px 12px; font-size:11px; }
+  .hero { padding-top:30px; min-height:auto; }
+  h1 { font-size:53px; }
+  .lead { font-size:14px; }
+  .hero-features { gap:8px; }
+  .feature { padding:0 8px; }
+  .feature b { font-size:21px; }
+  .feature strong { font-size:10px; }
+  .feature small { font-size:9px; }
+  .section { padding:38px 0; }
+  .products { gap:9px; }
+  .product-card:last-child { max-width:none; }
+  .card-info { padding:10px 7px; }
+  .price { font-size:22px; }
+  .steps,.trust,.faq { grid-template-columns:1fr; }
+  .step { border-right:0; border-bottom:1px solid #321010; }
+  .trust { gap:10px; }
+  .cta { padding:28px 18px; display:block; text-align:center; }
+  .cta .buy-btn { margin-top:18px; }
+  .footer-inner { display:block; text-align:center; line-height:1.8; }
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a href="#inicio"><img class="logo" src="assets/logo.webp" alt="ADMA STORE"></a>
+    <nav>
+      <a href="#inicio">INICIO</a><a href="#paneles">PANELES</a><a href="#funciones">FUNCIONES</a><a href="#faq">FAQ</a><a href="#contacto">CONTACTO</a>
+    </nav>
+    <a class="nav-buy" target="_blank" rel="noopener" href="https://wa.me/5548988021810?text=Hola%20ADMA%20STORE%2C%20quiero%20informaci%C3%B3n%20sobre%20los%20paneles">☘ COMPRAR AHORA</a>
+  </div>
+</header>
+
+<main id="inicio">
+<section class="container hero">
+  <div class="hero-copy">
+    <div class="eyebrow">PANELES PARA FREE FIRE</div>
+    <h1>DOMINA<span>EL JUEGO</span></h1>
+    <p class="lead">Los mejores paneles para Free Fire.<br>Más rendimiento, más precisión, más victorias.</p>
+    <div class="hero-features">
+      <div class="feature"><b>ϟ</b><strong>100% SEGURO</strong><small>Sistemas anti-ban</small></div>
+      <div class="feature"><b>◎</b><strong>MÁXIMO RENDIMIENTO</strong><small>Funciones avanzadas y estables</small></div>
+      <div class="feature"><b>♢</b><strong>SOPORTE 24/7</strong><small>Estamos siempre para ayudarte</small></div>
+    </div>
+  </div>
+  <img class="hero-art" src="assets/hero.webp" alt="ADMA STORE — Free Fire">
+</section>
+
+<section class="container section" id="paneles">
+  <div class="section-title">
+    <div class="kicker">CATÁLOGO DE PANELES</div>
+    <h2>ELIGE TU PANEL<br>Y LLEVA TU JUEGO AL <span style="color:var(--red)">SIGUIENTE NIVEL</span></h2>
+    <p>◈ ANTIBAN ACTIVO &nbsp;|&nbsp; ACTUALIZACIONES CONSTANTES &nbsp;|&nbsp; COMPATIBLE CON FREE FIRE</p>
+  </div>
+  <div class="products">
+    
+      <article class="product-card">
+        <div class="product-image-wrap">
+          <img src="assets/sl-extreme.webp" alt="SL EXTREME">
+        </div>
+        <div class="card-info">
+          <h3>SL EXTREME</h3>
+          <div class="price">R$65,00</div>
+          <p>SL REGEDIT</p>
+          <a class="buy-btn" href="https://wa.me/5548988021810?text=Me%20interesa%20el%20panel%20SL%20EXTREME%20de%20R%2465%2C00%2C%20mi%20%23%20es%20%2B5548988021810" target="_blank" rel="noopener">☘ COMPRAR</a>
+        </div>
+      </article>
+    
+      <article class="product-card">
+        <div class="product-image-wrap">
+          <img src="assets/sl-pro.webp" alt="SL PRO">
+        </div>
+        <div class="card-info">
+          <h3>SL PRO</h3>
+          <div class="price">R$15,00</div>
+          <p>SL REGEDIT</p>
+          <a class="buy-btn" href="https://wa.me/5548988021810?text=Me%20interesa%20el%20panel%20SL%20PRO%20de%20R%2415%2C00%2C%20mi%20%23%20es%20%2B5548988021810" target="_blank" rel="noopener">☘ COMPRAR</a>
+        </div>
+      </article>
+    
+      <article class="product-card">
+        <div class="product-image-wrap">
+          <img src="assets/sl-pro-max.webp" alt="SL PRO MAX">
+        </div>
+        <div class="card-info">
+          <h3>SL PRO MAX</h3>
+          <div class="price">R$25,00</div>
+          <p>SL REGEDIT</p>
+          <a class="buy-btn" href="https://wa.me/5548988021810?text=Me%20interesa%20el%20panel%20SL%20PRO%20MAX%20de%20R%2425%2C00%2C%20mi%20%23%20es%20%2B5548988021810" target="_blank" rel="noopener">☘ COMPRAR</a>
+        </div>
+      </article>
+    
+      <article class="product-card">
+        <div class="product-image-wrap">
+          <img src="assets/sl-max.webp" alt="SL MAX">
+        </div>
+        <div class="card-info">
+          <h3>SL MAX</h3>
+          <div class="price">R$40,00</div>
+          <p>SL REGEDIT</p>
+          <a class="buy-btn" href="https://wa.me/5548988021810?text=Me%20interesa%20el%20panel%20SL%20MAX%20de%20R%2440%2C00%2C%20mi%20%23%20es%20%2B5548988021810" target="_blank" rel="noopener">☘ COMPRAR</a>
+        </div>
+      </article>
+    
+      <article class="product-card">
+        <div class="product-image-wrap">
+          <img src="assets/sl-final.webp" alt="SL FINAL">
+        </div>
+        <div class="card-info">
+          <h3>SL FINAL</h3>
+          <div class="price">R$50,00</div>
+          <p>SL REGEDIT</p>
+          <a class="buy-btn" href="https://wa.me/5548988021810?text=Me%20interesa%20el%20panel%20SL%20FINAL%20de%20R%2450%2C00%2C%20mi%20%23%20es%20%2B5548988021810" target="_blank" rel="noopener">☘ COMPRAR</a>
+        </div>
+      </article>
+    
+  </div>
+</section>
+
+<section class="container section" id="funciones">
+  <div class="section-title"><div class="kicker">PROCESO SIMPLE</div><h2>¿CÓMO COMPRAR?</h2></div>
+  <div class="steps">
+    <div class="step"><div class="num">1</div><h3>ELIGE TU PANEL</h3><p>Selecciona el panel que mejor se adapte a ti.</p></div>
+    <div class="step"><div class="num">2</div><h3>HAZ CLICK EN COMPRAR</h3><p>Serás dirigido directamente a WhatsApp.</p></div>
+    <div class="step"><div class="num">3</div><h3>ENVÍA TU MENSAJE</h3><p>Te atenderemos y te daremos las instrucciones.</p></div>
+    <div class="step"><div class="num">4</div><h3>RECIBE Y DISFRUTA</h3><p>Activa tu panel y comienza a jugar.</p></div>
+  </div>
+</section>
+
+<section class="container section">
+  <div class="section-title"><div class="kicker">CONFIANZA</div><h2>LO QUE OFRECEMOS</h2></div>
+  <div class="trust">
+    <div class="trust-box"><div class="trust-icon">♢</div><h3>ANTIBAN ACTIVO</h3><p>Sistemas de protección y detección.</p></div>
+    <div class="trust-box"><div class="trust-icon">🚀</div><h3>ACTUALIZACIONES CONSTANTES</h3><p>Siempre al día con las últimas versiones.</p></div>
+    <div class="trust-box"><div class="trust-icon">♧</div><h3>SOPORTE 24/7</h3><p>Atención rápida y soporte dedicado.</p></div>
+    <div class="trust-box"><div class="trust-icon">♙</div><h3>MILES DE USUARIOS</h3><p>Jugadores satisfechos en toda América.</p></div>
+  </div>
+</section>
+
+<section class="container section" id="faq">
+  <div class="section-title"><div class="kicker">AYUDA</div><h2>PREGUNTAS FRECUENTES</h2></div>
+  <div class="faq">
+    <div>
+      <details open><summary>¿Es seguro usar los paneles?</summary><p>Consulta las condiciones y características del panel antes de comprar.</p></details>
+      <details><summary>¿Cómo recibo mi panel?</summary><p>La entrega y las instrucciones se coordinan por WhatsApp.</p></details>
+      <details><summary>¿Funciona en todas las cuentas?</summary><p>La compatibilidad puede variar según la versión y configuración.</p></details>
+    </div>
+    <div>
+      <details><summary>¿Necesito root o emulador?</summary><p>Depende del panel y de la versión disponible.</p></details>
+      <details><summary>¿Tienen soporte si tengo problemas?</summary><p>Contáctanos por WhatsApp para recibir asistencia.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="container section" id="contacto">
+  <div class="cta">
+    <div><h2>¿LISTO PARA SER EL MEJOR?</h2><p>Elige tu panel y contáctanos por WhatsApp.</p></div>
+    <a class="buy-btn" target="_blank" rel="noopener" href="https://wa.me/5548988021810?text=Hola%20ADMA%20STORE%2C%20quiero%20comprar%20un%20panel">☘ COMPRAR AHORA</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <strong>ADMA STORE</strong>
+    <span>© 2026 ADMA STORE. Todos los derechos reservados.</span>
+    <span>WhatsApp: +55 48 98802-1810</span>
+  </div>
+</footer>
+</body>
+</html>
