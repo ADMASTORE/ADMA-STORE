@@ -159,6 +159,40 @@ footer { border-top:1px solid #260707; padding:24px 0; color:#777; font-size:12p
   .cta .buy-btn { margin-top:18px; }
   .footer-inner { display:block; text-align:center; line-height:1.8; }
 }
+
+/* Marketing additions */
+.product-card { position:relative; overflow:hidden; }
+.discount-badge {
+  position:absolute; top:12px; right:12px; z-index:2;
+  background:var(--red); color:#fff; padding:7px 10px; border-radius:5px;
+  font-size:11px; font-weight:1000; letter-spacing:.5px;
+  box-shadow:0 0 16px rgba(255,0,0,.55);
+}
+.old-price { color:#777; text-decoration:line-through; font-size:14px; margin-top:8px; }
+.savings { color:#ff5757; font-size:12px; font-weight:800; margin-top:4px; }
+.price { margin-top:2px; }
+.quick-note {
+  margin:12px 0 0; color:#999; font-size:12px; line-height:1.5;
+  border-left:2px solid var(--red); padding-left:10px;
+}
+.compare-wrap { overflow-x:auto; border:1px solid #3c1111; border-radius:7px; background:#080808; }
+.compare { width:100%; border-collapse:collapse; min-width:600px; }
+.compare th,.compare td { padding:14px 16px; border-bottom:1px solid #2b0c0c; text-align:left; }
+.compare th { color:var(--red); font-size:12px; }
+.compare td { color:#ddd; font-size:13px; }
+.compare tr:last-child td { border-bottom:0; }
+.compare .compare-buy { color:#fff; font-weight:900; }
+.floating-wa {
+  position:fixed; right:18px; bottom:18px; z-index:50;
+  display:flex; align-items:center; gap:8px; background:#111;
+  border:1px solid var(--red); color:#fff; padding:12px 15px; border-radius:999px;
+  font-size:12px; font-weight:900; box-shadow:0 0 20px rgba(255,0,0,.45);
+}
+.promo-banner {
+  margin-top:20px; padding:13px 16px; border:1px solid #651212;
+  background:#100000; border-radius:6px; color:#eee; font-size:13px; font-weight:800;
+}
+
 </style>
 </head>
 <body>
@@ -192,70 +226,108 @@ footer { border-top:1px solid #260707; padding:24px 0; color:#777; font-size:12p
     <div class="kicker">CATÁLOGO DE PAINÉIS</div>
     <h2>ESCOLHA SEU PAINEL<br>E LEVE SEU JOGO PARA O <span style="color:var(--red)">PRÓXIMO NÍVEL</span></h2>
     <p>◈ ANTIBAN ATIVO &nbsp;|&nbsp; ATUALIZAÇÕES CONSTANTES &nbsp;|&nbsp; COMPATÍVEL COM FREE FIRE</p>
+    <div class="promo-banner">🔥 OFERTA ESPECIAL: aproveite os preços promocionais enquanto a campanha estiver ativa.</div>
   </div>
   <div class="products">
     
       <article class="product-card">
-        <div class="product-image-wrap">
-          <img src="assets/sl-extreme.webp" alt="SL EXTREME">
-        </div>
-        <div class="card-info">
-          <h3>SL EXTREME</h3>
-          <div class="price">R$65,00</div>
-          <p>SL REGEDIT</p>
-          <a class="buy-btn" href="https://wa.me/5548988021810?text=Tenho%20interesse%20no%20painel%20SL%20EXTREME%20de%20R%2465%2C00" target="_blank" rel="noopener">☘ COMPRAR</a>
-        </div>
-      </article>
-    
-      <article class="product-card">
+        <div class="discount-badge">50% OFF</div>
         <div class="product-image-wrap">
           <img src="assets/sl-pro.webp" alt="SL PRO">
         </div>
         <div class="card-info">
           <h3>SL PRO</h3>
+          <div class="old-price">De R$30,00</div>
           <div class="price">R$15,00</div>
+          <div class="savings">Você economiza R$15,00</div>
           <p>SL REGEDIT</p>
           <a class="buy-btn" href="https://wa.me/5548988021810?text=Tenho%20interesse%20no%20painel%20SL%20PRO%20de%20R%2415%2C00" target="_blank" rel="noopener">☘ COMPRAR</a>
         </div>
       </article>
     
       <article class="product-card">
+        <div class="discount-badge">50% OFF</div>
         <div class="product-image-wrap">
           <img src="assets/sl-pro-max.webp" alt="SL PRO MAX">
         </div>
         <div class="card-info">
           <h3>SL PRO MAX</h3>
+          <div class="old-price">De R$50,00</div>
           <div class="price">R$25,00</div>
+          <div class="savings">Você economiza R$25,00</div>
           <p>SL REGEDIT</p>
           <a class="buy-btn" href="https://wa.me/5548988021810?text=Tenho%20interesse%20no%20painel%20SL%20PRO%20MAX%20de%20R%2425%2C00" target="_blank" rel="noopener">☘ COMPRAR</a>
         </div>
       </article>
     
       <article class="product-card">
+        <div class="discount-badge">50% OFF</div>
         <div class="product-image-wrap">
           <img src="assets/sl-max.webp" alt="SL MAX">
         </div>
         <div class="card-info">
           <h3>SL MAX</h3>
+          <div class="old-price">De R$80,00</div>
           <div class="price">R$40,00</div>
+          <div class="savings">Você economiza R$40,00</div>
           <p>SL REGEDIT</p>
           <a class="buy-btn" href="https://wa.me/5548988021810?text=Tenho%20interesse%20no%20painel%20SL%20MAX%20de%20R%2440%2C00" target="_blank" rel="noopener">☘ COMPRAR</a>
         </div>
       </article>
     
       <article class="product-card">
+        <div class="discount-badge">50% OFF</div>
         <div class="product-image-wrap">
           <img src="assets/sl-final.webp" alt="SL FINAL">
         </div>
         <div class="card-info">
           <h3>SL FINAL</h3>
+          <div class="old-price">De R$100,00</div>
           <div class="price">R$50,00</div>
+          <div class="savings">Você economiza R$50,00</div>
           <p>SL REGEDIT</p>
           <a class="buy-btn" href="https://wa.me/5548988021810?text=Tenho%20interesse%20no%20painel%20SL%20FINAL%20de%20R%2450%2C00" target="_blank" rel="noopener">☘ COMPRAR</a>
         </div>
       </article>
     
+      <article class="product-card">
+        <div class="discount-badge">50% OFF</div>
+        <div class="product-image-wrap">
+          <img src="assets/sl-extreme.webp" alt="SL EXTREME">
+        </div>
+        <div class="card-info">
+          <h3>SL EXTREME</h3>
+          <div class="old-price">De R$130,00</div>
+          <div class="price">R$65,00</div>
+          <div class="savings">Você economiza R$65,00</div>
+          <p>SL REGEDIT</p>
+          <a class="buy-btn" href="https://wa.me/5548988021810?text=Tenho%20interesse%20no%20painel%20SL%20EXTREME%20de%20R%2465%2C00" target="_blank" rel="noopener">☘ COMPRAR</a>
+        </div>
+      </article>
+    
   </div>
+</section>
+
+
+<section class="container section">
+  <div class="section-title">
+    <div class="kicker">COMPARAÇÃO RÁPIDA</div>
+    <h2>ENCONTRE SEU PAINEL</h2>
+    <p>Compare os preços promocionais e escolha a opção que combina com você.</p>
+  </div>
+  <div class="compare-wrap">
+    <table class="compare">
+      <thead><tr><th>PAINEL</th><th>PREÇO</th><th>DESCONTO</th><th>ECONOMIA</th><th></th></tr></thead>
+      <tbody>
+        <tr><td>SL PRO</td><td>R$15,00</td><td>50% OFF</td><td>R$15,00</td><td><a class="compare-buy" href="https://wa.me/5548988021810?text=Tenho%20interesse%20no%20painel%20SL%20PRO%20de%20R%2415%2C00" target="_blank" rel="noopener">COMPRAR</a></td></tr>
+        <tr><td>SL PRO MAX</td><td>R$25,00</td><td>50% OFF</td><td>R$25,00</td><td><a class="compare-buy" href="https://wa.me/5548988021810?text=Tenho%20interesse%20no%20painel%20SL%20PRO%20MAX%20de%20R%2425%2C00" target="_blank" rel="noopener">COMPRAR</a></td></tr>
+        <tr><td>SL MAX</td><td>R$40,00</td><td>50% OFF</td><td>R$40,00</td><td><a class="compare-buy" href="https://wa.me/5548988021810?text=Tenho%20interesse%20no%20painel%20SL%20MAX%20de%20R%2440%2C00" target="_blank" rel="noopener">COMPRAR</a></td></tr>
+        <tr><td>SL FINAL</td><td>R$50,00</td><td>50% OFF</td><td>R$50,00</td><td><a class="compare-buy" href="https://wa.me/5548988021810?text=Tenho%20interesse%20no%20painel%20SL%20FINAL%20de%20R%2450%2C00" target="_blank" rel="noopener">COMPRAR</a></td></tr>
+        <tr><td>SL EXTREME</td><td>R$65,00</td><td>50% OFF</td><td>R$65,00</td><td><a class="compare-buy" href="https://wa.me/5548988021810?text=Tenho%20interesse%20no%20painel%20SL%20EXTREME%20de%20R%2465%2C00" target="_blank" rel="noopener">COMPRAR</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="quick-note">Os valores exibidos como “de” são valores de referência da oferta. Use essa comunicação apenas enquanto ela corresponder à sua promoção real.</p>
 </section>
 
 <section class="container section" id="funciones">
@@ -274,7 +346,7 @@ footer { border-top:1px solid #260707; padding:24px 0; color:#777; font-size:12p
     <div class="trust-box"><div class="trust-icon">♢</div><h3>ANTIBAN ATIVO</h3><p>Sistemas de proteção e detecção.</p></div>
     <div class="trust-box"><div class="trust-icon">🚀</div><h3>ATUALIZAÇÕES CONSTANTES</h3><p>Sempre atualizado com as versões mais recentes.</p></div>
     <div class="trust-box"><div class="trust-icon">♧</div><h3>SUPORTE 24/7</h3><p>Atendimento rápido e suporte dedicado.</p></div>
-    <div class="trust-box"><div class="trust-icon">♙</div><h3>MILHARES DE USUÁRIOS</h3><p>Jogadores satisfeitos em toda a América.</p></div>
+    <div class="trust-box"><div class="trust-icon">✓</div><h3>ATENDIMENTO DIRETO</h3><p>Fale diretamente com nossa equipe pelo WhatsApp.</p></div>
   </div>
 </section>
 
@@ -308,5 +380,6 @@ footer { border-top:1px solid #260707; padding:24px 0; color:#777; font-size:12p
     <span>WhatsApp: +55 48 98802-1810</span>
   </div>
 </footer>
+<a class="floating-wa" href="https://wa.me/5548988021810?text=Ol%C3%A1%20ADMA%20STORE%2C%20quero%20saber%20mais%20sobre%20os%20pain%C3%A9is" target="_blank" rel="noopener">💬 FALAR NO WHATSAPP</a>
 </body>
 </html>
