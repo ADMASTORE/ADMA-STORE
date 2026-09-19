@@ -258,6 +258,292 @@ footer { border-top:1px solid #260707; padding:24px 0; color:#777; font-size:12p
   }
 }
 
+
+/* ===== ADMA STORE V2 - VISUAL UPGRADE ===== */
+:root {
+  --adma-red: #ff1744;
+  --adma-red-2: #ff003c;
+  --adma-bg: #050505;
+  --adma-card: #0d0d0f;
+  --adma-text: #ffffff;
+  --adma-muted: #a8a8ad;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255, 23, 68, .12), transparent 34%),
+    radial-gradient(circle at 10% 35%, rgba(255, 0, 60, .05), transparent 25%),
+    var(--adma-bg) !important;
+  color: var(--adma-text);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: .18;
+  background-image:
+    radial-gradient(circle, rgba(255,23,68,.55) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: linear-gradient(to bottom, black, transparent 78%);
+  z-index: -1;
+}
+
+header, .hero {
+  position: relative;
+}
+
+.hero {
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255,23,68,.2);
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  right: -90px;
+  top: -90px;
+  border-radius: 50%;
+  background: rgba(255,23,68,.10);
+  filter: blur(45px);
+  pointer-events: none;
+}
+
+.products-section, .products-container, .container {
+  position: relative;
+}
+
+.products-section::before {
+  content: "🔥 NOSSOS PAINÉIS";
+  display: block;
+  text-align: center;
+  color: #fff;
+  font-size: clamp(24px, 5vw, 38px);
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-shadow: 0 0 16px rgba(255,23,68,.55);
+  margin: 22px 0 5px;
+}
+
+.products-section::after {
+  content: "Escolha seu painel e compre diretamente pelo WhatsApp";
+  display: block;
+  text-align: center;
+  color: #aaa;
+  font-size: 14px;
+  margin: 0 0 25px;
+}
+
+.product-card {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(145deg, rgba(20,20,23,.98), rgba(7,7,8,.98)) !important;
+  border: 1px solid rgba(255,23,68,.28) !important;
+  border-radius: 18px !important;
+  box-shadow: 0 8px 30px rgba(0,0,0,.45), 0 0 0 rgba(255,23,68,0);
+  transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+  animation: admaCardIn .55s ease both;
+}
+
+.product-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent 35%, rgba(255,255,255,.05) 50%, transparent 65%);
+  transform: translateX(-120%);
+  transition: transform .65s ease;
+  pointer-events: none;
+}
+
+.product-card:hover {
+  border-color: rgba(255,23,68,.85) !important;
+  box-shadow: 0 12px 38px rgba(0,0,0,.6), 0 0 24px rgba(255,23,68,.18);
+  transform: translateY(-5px);
+}
+
+.product-card:hover::before {
+  transform: translateX(120%);
+}
+
+.product-card img {
+  transition: transform .35s ease, filter .35s ease;
+}
+
+.product-card:hover img {
+  transform: scale(1.035);
+  filter: saturate(1.08);
+}
+
+.product-card button,
+.product-card .buy-button,
+.product-card a[href*="wa.me"] {
+  transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+}
+
+.product-card button:hover,
+.product-card .buy-button:hover,
+.product-card a[href*="wa.me"]:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+  box-shadow: 0 0 18px rgba(255,23,68,.35);
+}
+
+@keyframes admaCardIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.product-card:nth-child(2) { animation-delay: .04s; }
+.product-card:nth-child(3) { animation-delay: .08s; }
+.product-card:nth-child(4) { animation-delay: .12s; }
+.product-card:nth-child(5) { animation-delay: .16s; }
+.product-card:nth-child(6) { animation-delay: .20s; }
+.product-card:nth-child(7) { animation-delay: .24s; }
+.product-card:nth-child(8) { animation-delay: .28s; }
+.product-card:nth-child(9) { animation-delay: .32s; }
+.product-card:nth-child(10) { animation-delay: .36s; }
+
+/* Trust / benefits strip */
+.adma-benefits {
+  width: min(1100px, 92%);
+  margin: 42px auto 10px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.adma-benefit {
+  padding: 18px 12px;
+  text-align: center;
+  background: rgba(14,14,16,.9);
+  border: 1px solid rgba(255,23,68,.2);
+  border-radius: 15px;
+}
+
+.adma-benefit .icon {
+  font-size: 25px;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.adma-benefit strong {
+  display: block;
+  font-size: 13px;
+}
+
+.adma-benefit span {
+  display: block;
+  color: #909096;
+  font-size: 11px;
+  margin-top: 4px;
+}
+
+/* FAQ */
+.adma-faq {
+  width: min(850px, 92%);
+  margin: 45px auto;
+}
+
+.adma-faq h2 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 18px;
+  text-shadow: 0 0 14px rgba(255,23,68,.45);
+}
+
+.adma-faq details {
+  margin: 10px 0;
+  background: #0c0c0e;
+  border: 1px solid rgba(255,23,68,.22);
+  border-radius: 13px;
+  overflow: hidden;
+}
+
+.adma-faq summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 16px 18px;
+  font-weight: 800;
+}
+
+.adma-faq summary::-webkit-details-marker { display: none; }
+
+.adma-faq summary::after {
+  content: "+";
+  float: right;
+  color: var(--adma-red);
+  font-size: 21px;
+}
+
+.adma-faq details[open] summary::after { content: "−"; }
+
+.adma-faq p {
+  color: #aaa;
+  padding: 0 18px 17px;
+  margin: 0;
+  line-height: 1.55;
+  font-size: 14px;
+}
+
+/* WhatsApp floating button */
+.adma-wa-float {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 9999;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 29px;
+  background: #25D366;
+  box-shadow: 0 5px 24px rgba(37,211,102,.35);
+  animation: admaPulse 2.2s infinite;
+}
+
+@keyframes admaPulse {
+  0%,100% { box-shadow: 0 5px 24px rgba(37,211,102,.28); }
+  50% { box-shadow: 0 5px 30px rgba(37,211,102,.55); }
+}
+
+/* Footer */
+.adma-footer {
+  text-align: center;
+  padding: 38px 20px 30px;
+  margin-top: 20px;
+  border-top: 1px solid rgba(255,23,68,.16);
+  color: #777;
+  font-size: 12px;
+}
+
+.adma-footer .brand {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-shadow: 0 0 12px rgba(255,23,68,.55);
+  margin-bottom: 7px;
+}
+
+@media (max-width: 700px) {
+  .adma-benefits { grid-template-columns: repeat(2, 1fr); }
+  .adma-benefit { padding: 14px 8px; }
+}
+
+@media (max-width: 420px) {
+  .adma-benefits { gap: 8px; }
+  .adma-benefit .icon { font-size: 22px; }
+  .adma-wa-float { width: 54px; height: 54px; right: 14px; bottom: 14px; }
+}
+
 </style>
 </head>
 <body>
@@ -515,5 +801,45 @@ footer { border-top:1px solid #260707; padding:24px 0; color:#777; font-size:12p
   </div>
 </footer>
 <a class="floating-wa" href="https://wa.me/5548988021810?text=Ol%C3%A1%20ADMA%20STORE%2C%20quero%20saber%20mais%20sobre%20os%20pain%C3%A9is" target="_blank" rel="noopener">💬 FALAR NO WHATSAPP</a>
+
+<!-- ADMA STORE - BENEFÍCIOS -->
+<section class="adma-benefits" aria-label="Benefícios">
+  <div class="adma-benefit"><span class="icon">⚡</span><strong>ENTREGA RÁPIDA</strong><span>Atendimento ágil</span></div>
+  <div class="adma-benefit"><span class="icon">🔒</span><strong>COMPRA SEGURA</strong><span>Pagamento com suporte</span></div>
+  <div class="adma-benefit"><span class="icon">💬</span><strong>ATENDIMENTO DIRETO</strong><span>Fale conosco no WhatsApp</span></div>
+  <div class="adma-benefit"><span class="icon">🎮</span><strong>PAINÉIS PREMIUM</strong><span>Opções para seu estilo</span></div>
+</section>
+
+<!-- ADMA STORE - FAQ -->
+<section class="adma-faq" id="faq">
+  <h2>❓ PERGUNTAS FREQUENTES</h2>
+  <details>
+    <summary>Como faço para comprar?</summary>
+    <p>Toque no botão de comprar do painel escolhido. O WhatsApp será aberto com uma mensagem automática para facilitar seu atendimento.</p>
+  </details>
+  <details>
+    <summary>Como recebo atendimento?</summary>
+    <p>Depois de clicar em comprar, nossa equipe poderá continuar o atendimento diretamente pelo WhatsApp.</p>
+  </details>
+  <details>
+    <summary>Posso tirar dúvidas antes de comprar?</summary>
+    <p>Sim. Use o botão flutuante do WhatsApp para falar com a ADMA STORE antes de escolher seu painel.</p>
+  </details>
+  <details>
+    <summary>Qual painel devo escolher?</summary>
+    <p>Confira as informações e o preço de cada produto e escolha o painel que corresponde ao que você procura.</p>
+  </details>
+</section>
+
+<a class="adma-wa-float"
+   href="https://wa.me/5548988021810?text=Ol%C3%A1%20ADMA%20STORE%2C%20quero%20saber%20mais%20sobre%20os%20pain%C3%A9is"
+   target="_blank" rel="noopener" aria-label="Falar com ADMA STORE no WhatsApp">💬</a>
+
+<footer class="adma-footer">
+  <div class="brand">ADMA STORE</div>
+  <div>Atendimento direto via WhatsApp</div>
+  <div style="margin-top:8px;">© 2026 — Todos os direitos reservados</div>
+</footer>
+
 </body>
 </html>
